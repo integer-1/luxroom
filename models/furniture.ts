@@ -1,10 +1,9 @@
 export interface FurnitureItems {
-  map(arg0: (item: any, index: any) => import("react/jsx-runtime").JSX.Element): import("react").ReactNode
   code: number
   name: string
   price: number
   mainCategory: string
-  SubCategory: string
+  subCategory: string
   description: string
   inStock: number
 }

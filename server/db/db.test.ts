@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { describe, it, expect, beforeAll, beforeEach, afterAll } from 'vitest'
 import connection from './connection.ts'
-// import { getWidgets } from './db.ts'
+import { getChairs, getChairById } from './db.ts'
 
 beforeAll(async () => {
   await connection.migrate.latest()
@@ -15,12 +15,20 @@ afterAll(async () => {
   await connection.destroy()
 })
 
-// describe('getWidgets', () => {
-//   it('returns the correct widgets array', async () => {
-//     const widgets = await getWidgets()
+describe('Read data of chairs', () => {
+  it('returns the correct chairs array', async () => {
+    const chairs = await getChairs()
 
-//     expect(widgets).toHaveLength(3)
-//     expect(widgets[0]).toHaveProperty('mfg')
-//     expect(widgets[1].inStock).toBe(8)
-//   })
-// })
+    expect(chairs).toHaveLength(9)
+    expect(chairs[0]).toHaveProperty('price')
+    expect(chairs[1].inStock).toBe(15)
+  })
+
+  it('returns the correct a chair by id', async () => {
+    const chair = await getChairById(1101)
+
+    expect(chair).toHaveLength(1)
+    expect(chair[0].name).toBe('Gren-Latan-Oak-Chair')
+    expect(chair[0].inStock).toBe(20)
+  })
+})

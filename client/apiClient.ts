@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import request from 'superagent'
-import { FurnitureItems } from '../models/furnitureItems'
-import { FurnitureDetail } from '../models/furnitureDetail'
+import { FurnitureItems , FurnitureDetail } from '../models/furniture'
 
 const url = '/api/v1/'
 

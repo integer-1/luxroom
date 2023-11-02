@@ -13,10 +13,16 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get('/', async (req, res) => {
+router.get('/:code', async (req, res) => {
+  const code = parseInt(req.params.code)
+  console.log(code)
+  if (isNaN(code)) {
+    res.status(400).send('Bad Request: code must be a number')
+    return
+  }
   try {
-    const chairs = await db.getChairs()
-    res.json(chairs)
+    const chair = await db.getChairById(code)
+    res.json(chair)
   } catch (err) {
     console.log(err)
     res.status(500).send('Could not get chairs')
