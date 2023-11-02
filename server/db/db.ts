@@ -1,7 +1,10 @@
-import connection from './connection.ts'
+import db from '../db/connection.ts'
+import { FurnitureItems, FurnitureDetail } from '../../models/furniture.ts'
 
-import { Widget } from '../../models/Widget.ts'
+export async function getChairs(): Promise<FurnitureItems[]> {
+  return db('chairs').select('*')
+}
 
-export function getWidgets(db = connection): Promise<Widget[]> {
-  return db<Widget>('widgets').select()
+export async function getDetail(): Promise<FurnitureDetail[]> {
+  return db('detail').select('*')
 }

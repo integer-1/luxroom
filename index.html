@@ -37,35 +37,54 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script
+      src="https://kit.fontawesome.com/f8a9173c95.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <title>React and web APIs!</title>
+    <title>Furniture</title>
   </head>
-  <body>
+  <body id="body-size">
     <!--Menu Bar-->
     <nav>
       <input type="checkbox" id="check" />
       <label for="check">
-        <i class="fa fa-bars" id="btn"></i>
-        <i class="fa fa-times" id="cancel"></i>
+        <i class="fa-solid fa-bars" id="btn"></i>
+        <i class="fa-solid fa-xmark" id="cancel"></i>
       </label>
-      <img id="home" src="../public/logo.jpg" alt="number1" />
+      <a href="/"><img id="home" src="../public/logo.jpg" alt="number1" /></a>
       <ul>
-        <li><a href="../blog/about.html">About</a></li>
         <li class="show">
-          <a href="#">Projects</a>
+          <a href="/">Living Room</a>
           <ul>
-            <li><a href="../blog/group-projects.html">Group</a></li>
-            <li><a href="../blog/personal-projects.html">Personal</a></li>
+            <li><a href="../furniture/list">Chairs</a></li>
+            <li><a href="../furniture/list">Table</a></li>
+            <li><a href="../furniture/list">Shelves</a></li>
           </ul>
         </li>
         <li class="show">
-          <a href="#">Study</a>
+          <a href="/">BedRoom</a>
           <ul>
-            <li><a href="../blog/dev-study.html">Dev Academy</a></li>
-            <li><a href="../blog/personal-study.html">Personal</a></li>
+            <li><a href="../furniture/list">Beds</a></li>
+            <li><a href="../furniture/list">Bedside Table</a></li>
+            <li><a href="../furniture/list">Drawers</a></li>
           </ul>
         </li>
-        <li><a href="../blog/blog.html">Blog</a></li>
+        <li class="show">
+          <a href="/">Dining Room</a>
+          <ul>
+            <li><a href="../furniture/list">Chairs</a></li>
+            <li><a href="../furniture/list">Table</a></li>
+          </ul>
+        </li>
+        <li class="show">
+          <a href="/">Office</a>
+          <ul>
+            <li><a href="../furniture/list">Chairs</a></li>
+            <li><a href="../furniture/list">Table</a></li>
+          </ul>
+        </li>
+        <li><a href="/">Sale</a></li>
       </ul>
     </nav>
 

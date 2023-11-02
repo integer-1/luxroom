@@ -1,20 +1,21 @@
-// import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './screens/Home.tsx'
-import Detail from './screens/Detail.tsx'
-import List from './screens/List.tsx'
-import Shop from './screens/List.tsx'
+import { useQuery } from "@tanstack/react-query"
+import FavoriteFurniture from "./components/FavoriteFurniture"
+import FurnitureMain from "./components/FurnitureMain"
+import { getChairs } from "./apiClient"
+import LatestStyles from "./components/LatestStyles"
 
 function App() {
+
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-\        <Route path="/furniture/list" element={<List />} />
-        <Route path="/furniture/list/:name" element={<Detail />} />
-        <Route path="/shop" element={<Shop />} />
-      </Routes>
-    </Router>
+    <>
+      <div className="furniture-view">
+      <FurnitureMain />
+      <LatestStyles/>
+      {/* <FavoriteFurniture /> */}
+
+      </div>
+    </>
   )
 }
 

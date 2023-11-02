@@ -1,8 +1,12 @@
 import React from 'react'
+import FurnitureShow from '../components/FurnitureShow'
 
 const List = () => {
   return (
-    <div>List</div>
+    <div>
+
+      {/* <FurnitureShow/> */}
+    </div>
   )
 }
 

@@ -1,6 +1,6 @@
 import FavoriteFurniture from '../components/FavoriteFurniture.tsx'
 import FurnitureMain from '../components/FurnitureMain.tsx'
-import FurnitureNav from '../components/FurnitureNav.tsx'
+// import FurnitureNav from '../components/FurnitureNav.tsx'
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
       <div className="line"></div>
       {/* <FurnitureNav /> */}
       <FurnitureMain />
-      <FavoriteFurniture />
+      {/* <FavoriteFurniture /> */}
     </div>
   )
 }

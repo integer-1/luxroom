@@ -1,15 +1,31 @@
 /* eslint-disable jsx-a11y/alt-text */
-import furnitureItems from '../../data/furnitureItems.ts'
-import furnitureDetail from '../../data/furnitureDetail.ts'
 import { useParams } from 'react-router-dom'
-import FurnitureNav from './FurnitureNav.tsx'
+import { useEffect, useState } from 'react'
+import { FurnitureItems, FurnitureDetail } from '../../models/furniture.ts'
+import { getChairs, getDetail } from '../apiClient.ts'
 
 const FurnitureShow = () => {
+  const [chairs, setChairs] = useState<FurnitureItems[]>([])
+  const [detail, setDetail] = useState<FurnitureDetail[]>([])
   const { name } = useParams()
 
-  const itemDescription = furnitureItems.find((item) => item.name === name)
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const chairsData = await getChairs()
+        setChairs(chairsData)
+        const detailData = await getDetail()
+        setDetail(detailData)
+      } catch (error) {
+        console.error
+      }
+    }
+    fetchData()
+  }, [])
+
+  const itemDescription = chairs.find((item) => item.name === name)
   const itemCode = itemDescription?.code
-  const itemDetail = furnitureDetail.find((item) => item.itemCode === itemCode)
+  const itemDetail = detail.find((item) => item.itemCode === itemCode)
 
   const formatText = (text?: string): string | undefined => {
     return text
@@ -19,37 +35,18 @@ const FurnitureShow = () => {
 
   return (
     <div>
-      <p>First Personal Project</p>
-      <FurnitureNav />
-      <div>
-        <h2>{formatText(itemDescription?.name)}</h2>
-        <img
-          className=""
-          src={`../../Public/${itemCode}.jpg`}
-          alt="Second slide"
-        />
-        {/* <p className="item-link">
-          <Link to={'../dining-room'}>
-            {formatText(itemDescription?.mainCategory)}
-          </Link>
-          &gt; <Link to={'../'}>{itemDescription?.SubCategory}</Link>
-        </p> */}
-        <h4>Price</h4>
-        <p>$ {itemDescription?.price}</p>
-        <h4>Description</h4>
-        <p className="item-description">{itemDetail?.description}</p>
-        <h4>Detail</h4>
-        {/* <ItemDetail
-          itemCode={itemDetail?.itemCode}
-          height={itemDetail?.height}
-          depth={itemDetail?.depth}
-          width={itemDetail?.width}
-          frameType={itemDetail?.frameType}
-          color={itemDetail?.color}
-          description={itemDetail?.description}
-          etc={itemDetail?.etc}
-        /> */}
-      </div>
+      <h2>{formatText(itemDescription?.name)}</h2>
+      <img
+        className=""
+        src={`../../Public/${itemCode}.jpg`}
+        alt="Second slide"
+      />
+      <h4>Price</h4>
+      <p>$ {itemDescription?.price}</p>
+      <h4>Description</h4>
+      <p className="item-description">{itemDetail?.description}</p>
+      <h4>Detail</h4>
+      <p>{itemDetail?.itemCode}</p>
     </div>
   )
 }
