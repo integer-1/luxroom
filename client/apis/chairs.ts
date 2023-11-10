@@ -1,12 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 import request from 'superagent'
-import { FurnitureItems, FurnitureDetail } from '../../models/furniture.ts'
 
-const url = '/api/v1/'
+const rootUrl = '/api/v1'
 
-export async function getChairs(): Promise<FurnitureItems> {
-  const res = await request.get(`${url}chairs`)
+export async function getChairs() {
+  const res = await request.get(rootUrl + `/chairs`)
   return res.body
 }
 
+export async function getChairByMain(mainCategory: string) {
+  const res = await request.get(rootUrl + `/chairs/${mainCategory}`)
+  return res.body
+}

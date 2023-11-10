@@ -1,7 +1,6 @@
 import { Carousel } from 'react-bootstrap'
-// src="../../Public/furniture-image/main-chair1.jpg"
 
-const FurnitureMain = () => {
+const HomeSlide = () => {
   return (
     <div className="slide">
       <Carousel data-bs-theme="dark">
@@ -43,4 +42,4 @@ const FurnitureMain = () => {
   )
 }
 
-export default FurnitureMain
+export default HomeSlide

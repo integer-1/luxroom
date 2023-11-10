@@ -24,7 +24,7 @@ nav:after {
 nav img {
   width: 180px;
   margin-top: 12px;
-  margin-left: 5px;
+  margin-left: 11px;
   float: left;
 }
 
@@ -76,14 +76,14 @@ nav ul ul li {
 }
 
 nav ul ul li a {
-  font-size: 17px;
+  font-size: 14px;
   text-decoration: none;
 }
 
 nav ul li a {
   position: relative;
   color: #2b2b2b;
-  font-size: 20px;
+  font-size: 16px;
   padding: 5px 0;
   text-transform: uppercase;
 }
@@ -124,7 +124,7 @@ label #cancel {
   display: none;
 }
 
-@media (max-width: 885px) {
+@media (max-width: 1100px) {
   label #btn {
     display: block;
   }
@@ -157,7 +157,7 @@ label #cancel {
   }
 
   nav ul li a {
-    font-size: 18px;
+    font-size: 16px;
   }
   /* 여기부터 */
 
@@ -181,7 +181,7 @@ label #cancel {
 
   nav ul ul li a {
     line-height: 70px;
-    font-size: 14px;
+    font-size: 1px;
   }
 
   .show {
@@ -209,13 +209,13 @@ label #cancel {
   }
 
   nav ul ul li a {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1100px) {
   #body-size {
-    width: 80%;
+    width: 85%;
     margin: auto;
   }
 }
@@ -223,7 +223,6 @@ label #cancel {
 /* main */
 
 .slide {
-  margin: 10px;
   z-index: 1;
 }
 .slide .text {
@@ -242,4 +241,68 @@ label #cancel {
 }
 .favorite img {
   width: 100%;
+}
+
+/* main category */
+
+.main {
+}
+
+.main .thumbnail {
+  position: relative;
+  text-align: center;
+}
+
+.main .thumbnail img {
+  width: 100%;
+  height: auto;
+}
+
+.main .thumbnail h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.link-sub {
+  margin-right: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'asap';
+  color: black;
+  font-size: 16px;
+}
+
+.link-sub-last {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'asap';
+  color: black;
+  font-size: 16px;
+}
+
+.main .main-category .main-category-list img {
+  width: 70%;
+}
+
+.sub-nav {
+  text-align: center;
+
+}
+/* sub category */
+.sub h2{
+text-align: center;
+margin-top: 100px;
+/* text-transform: uppercase; */
+font-family: 'asap';
+}
+
+.sub .sub-nav {
+  margin-top: 30px;
+
 }

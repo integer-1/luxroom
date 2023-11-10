@@ -1,4 +1,4 @@
-export interface FurnitureItems {
+export interface Chair {
   code: number
   name: string
   price: number
@@ -8,7 +8,7 @@ export interface FurnitureItems {
   inStock: number
 }
 
-export interface FurnitureDetail {
+export interface ChairDetail {
   itemCode: number
   height: number
   depth: number
