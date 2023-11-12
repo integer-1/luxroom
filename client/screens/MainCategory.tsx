@@ -17,6 +17,10 @@ const MainCategory = () => {
     queryFn: () => getChairByMain(mainCategory as string),
   })
 
+  if (mainCategory === undefined) {
+    return <p>Please Check Main Category</p>
+  }
+
   if (isError) return <p>Something went wrong!</p>
 
   if (!chairs || isLoading) return <p>Loading...</p>
@@ -26,7 +30,7 @@ const MainCategory = () => {
       <div className="thumbnail">
         <h3>{mainCategory} Chairs</h3>
         <img src={`../../${mainCategory}-main.jpg`} alt={chairs[0].name} />
-        <SubLink />
+        <SubLink mainCategory={mainCategory} />
       </div>
 
       <div className="main-category">

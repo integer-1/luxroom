@@ -1,11 +1,15 @@
 import { useQuery } from '@tanstack/react-query'
 import { Container, Row, Col } from 'react-bootstrap'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getChairByMain } from '../apis/chairs'
 import { Chair } from '../../models/chairs'
 
-const ListBySub = () => {
-  const { mainCategory, subCategory } = useParams()
+interface CategoryProps {
+  mainCategory: string
+  subCategory: string
+}
+
+const ListBySub: React.FC<CategoryProps> = ({ mainCategory, subCategory }) => {
 
   const {
     data: chairs,
