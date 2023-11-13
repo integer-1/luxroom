@@ -3,14 +3,7 @@ import { getLatestChairs } from '../apis/chairs.ts'
 import { Chair } from '../../models/chairs.ts'
 import { Link } from 'react-router-dom'
 import LoadingPage from './LoadingPage.tsx'
-import {
-  Container,
-  Row,
-  Col,
-  // Button,
-  // OverlayTrigger,
-  // Tooltip,
-} from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const LatestStyles = () => {
   const {
@@ -31,7 +24,6 @@ const LatestStyles = () => {
   }
 
   if (!chairs || isLoading) return <LoadingPage />
-
 
   return (
     <div className="favorite">
