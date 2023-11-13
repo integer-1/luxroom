@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { getChairByMain } from '../apis/chairs'
 import { Chair } from '../../models/chairs'
+import LoadingPage from './LoadingPage'
 
 interface CategoryProps {
   mainCategory: string
@@ -22,7 +23,7 @@ const ListBySub: React.FC<CategoryProps> = ({ mainCategory, subCategory }) => {
 
   if (isError) return <p>Something went wrong!</p>
 
-  if (!chairs || isLoading) return <p>Loading...</p>
+  if (!chairs || isLoading) return <LoadingPage/>
 
   const filteredChairs = chairs.filter(
     (chair: Chair) => chair.subCategory === subCategory

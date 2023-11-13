@@ -4,6 +4,7 @@ import { getChairByMain } from '../apis/chairs'
 import { Chair } from '../../models/chairs'
 import SubLink from '../components/SubLink'
 import { Container, Row, Col } from 'react-bootstrap'
+import LoadingPage from '../components/LoadingPage'
 
 const MainCategory = () => {
   const { mainCategory } = useParams()
@@ -23,7 +24,7 @@ const MainCategory = () => {
 
   if (isError) return <p>Something went wrong!</p>
 
-  if (!chairs || isLoading) return <p>Loading...</p>
+  if (!chairs || isLoading) return <LoadingPage/>
 
   return (
     <div className="main">

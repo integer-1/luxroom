@@ -1,8 +1,16 @@
 import { useQuery } from '@tanstack/react-query'
 import { getLatestChairs } from '../apis/chairs.ts'
-import { Container, Row, Col } from 'react-bootstrap'
 import { Chair } from '../../models/chairs.ts'
 import { Link } from 'react-router-dom'
+import LoadingPage from './LoadingPage.tsx'
+import {
+  Container,
+  Row,
+  Col,
+  // Button,
+  // OverlayTrigger,
+  // Tooltip,
+} from 'react-bootstrap'
 
 const LatestStyles = () => {
   const {
@@ -22,9 +30,9 @@ const LatestStyles = () => {
     )
   }
 
-  if (!chairs || isLoading) {
-    return <p>...loading</p>
-  }
+  if (!chairs || isLoading) return <LoadingPage />
+
+
   return (
     <div className="favorite">
       <h3>Shop Our Latest Styles</h3>
