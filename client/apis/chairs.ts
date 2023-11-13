@@ -11,3 +11,8 @@ export async function getChairByMain(mainCategory: string) {
   const res = await request.get(rootUrl + `/chairs/${mainCategory}`)
   return res.body
 }
+
+export async function getLatestChairs() {
+  const res = await request.get(rootUrl + `/chairs/latest`)
+  return res.body
+}

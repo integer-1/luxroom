@@ -35,7 +35,7 @@ const ListBySub: React.FC<CategoryProps> = ({ mainCategory, subCategory }) => {
           {filteredChairs.length > 0 ? (
             filteredChairs.map((chair: Chair, index: number) => (
               <Col sm={12} md={6} lg={3} key={index}>
-                <Link to={`/${mainCategory}/${subCategory}/${chair.name}`}>
+                <Link to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}>
                   <img
                     src={`../../Public/${chair.code}.jpg`}
                     alt={chair.name}

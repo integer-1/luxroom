@@ -13,6 +13,31 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/latest', async (req, res) => {
+  try {
+    const chairs = await db.getLatestChairs()
+    res.json(chairs)
+  } catch (err) {
+    console.log(err)
+    res.status(500).send('Could not get chairs')
+  }
+})
+
+
+router.get('/:mainCategory', async (req, res) => {
+  const main = req.params.mainCategory
+  console.log(main)
+
+  try {
+    const chairs = await db.getChairByMain(main)
+    res.json(chairs)
+  } catch (err) {
+    console.log(err)
+    res.status(500).send('Could not get chairs')
+  }
+})
+
+
 // router.get('/:code', async (req, res) => {
 //   const code = parseInt(req.params.code)
 //   console.log(code)
@@ -28,19 +53,6 @@ router.get('/', async (req, res) => {
 //     res.status(500).send('Could not get chairs')
 //   }
 // })
-
-router.get('/:mainCategory', async (req, res) => {
-  const main = req.params.mainCategory
-  console.log(main)
-
-  try {
-    const chairs = await db.getChairByMain(main)
-    res.json(chairs)
-  } catch (err) {
-    console.log(err)
-    res.status(500).send('Could not get chairs')
-  }
-})
 
 
 export default router

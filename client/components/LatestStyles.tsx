@@ -1,47 +1,51 @@
-import { Link } from 'react-router-dom'
-import { Container, Row, Col } from 'react-bootstrap'
-import { useEffect, useState } from 'react'
-import { FurnitureItems } from '../../models/chairs.ts'
-import { getChairs } from '../apiClient.ts'
-import chairs from '../../server/db/data/chairs.js'
 import { useQuery } from '@tanstack/react-query'
+import { getLatestChairs } from '../apis/chairs.ts'
+import { Container, Row, Col } from 'react-bootstrap'
+import { Chair } from '../../models/chairs.ts'
+import { Link } from 'react-router-dom'
 
 const LatestStyles = () => {
-  // const {data: chairs, isLoading, isError} = useQuery(['chairs'], getChairs)
+  const {
+    data: chairs,
+    isError,
+    isLoading,
+  } = useQuery({
+    queryKey: ['chairs'],
+    queryFn: () => getLatestChairs(),
+  })
 
-  // if (isError) {
-  //   return (
-  //     <>
-  //       <p>Something went wrong!</p>
-  //     </>
-  //   )
-  // }
+  if (isError) {
+    return (
+      <>
+        <p>Something went wrong!</p>
+      </>
+    )
+  }
 
-  // if (!chairs || isLoading) {
-  //   return <p>...loading</p>
-  // }
+  if (!chairs || isLoading) {
+    return <p>...loading</p>
+  }
   return (
-    <div>
+    <div className="favorite">
       <h3>Shop Our Latest Styles</h3>
-      {/* <Container>
+      <Container>
         <Row>
-          {chairs.map((item, index) => {
+          {chairs.map((chair: Chair, index: number) => {
             return (
-              <Col sm={12} md={6} lg={3} key={index}>
-                <Link to={`../personal-projects/first/furniture/${item.name}`}>
+              <Col sm={3} md={3} lg={3} key={index}>
+                <Link
+                  to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
+                >
                   <img
-                    src={`../../Public/${item.code}.jpg`}
-                    className="main-category"
+                    src={`../../Public/${chair.code}.jpg`}
+                    alt={chair.name}
                   />
-                  <p>{item.name.replace(/-/g, ' ')}</p>
                 </Link>
-                <p>{item.description}</p>
-                <p>${item.price}</p>
               </Col>
             )
           })}
         </Row>
-      </Container> */}
+      </Container>
     </div>
   )
 }

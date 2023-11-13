@@ -9,10 +9,15 @@ export async function getChairById(code: number): Promise<Chair[]> {
   return db('chairs').where({ code }).select()
 }
 
-export async function getChairByMain(
-  mainCategory: string
-): Promise<Chair[]> {
+export async function getChairByMain(mainCategory: string): Promise<Chair[]> {
   return db('chairs').where({ mainCategory }).select()
+}
+
+const oneMonthAgo = new Date()
+oneMonthAgo.setDate(oneMonthAgo.getDate() - 30)
+
+export async function getLatestChairs(): Promise<Chair[]> {
+  return db('chairs').whereBetween('release_date', [oneMonthAgo, Date()])
 }
 
 export async function getDetail(): Promise<ChairDetail[]> {

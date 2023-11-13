@@ -1,8 +1,8 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query'
+// import { useMutation, useQueryClient } from '@tanstack/react-query'
 import {  } from '../../apis/chairs.ts'
 
 export function useChairs() {
-  const queryClient = useQueryClient()
+  // const queryClient = useQueryClient()
 
   
 

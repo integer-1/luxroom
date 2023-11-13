@@ -7,6 +7,7 @@ export default [
     subCategory: 'Modern',
     description: 'Natural adds additional seating and style to your living spaces. This accent chair has strong wooden legs and a stylish curved back for designer, on-trend style.',
     inStock: 20,
+
   },
   {
     code: 1102,
