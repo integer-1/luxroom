@@ -130,8 +130,8 @@ label #cancel {
   }
 
   body {
-    /* position: fixed; */
     width: 100%;
+    padding: 10px;
   }
 
   nav ul {
@@ -210,12 +210,47 @@ label #cancel {
   nav ul ul li a {
     font-size: 14px;
   }
+
+  .latest .latest-img-box {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width: 740px) {
+  .about .about-box1 p {
+    font-size: 2.5vw;
+  }
+
+  .about .about-box2 {
+    grid-template-columns: 100%;
+    font-size: 2.5vw;
+  }
+
+  .about .about-box2 .text-container {
+    margin-left: 0px;
+  }
 }
 
 @media only screen and (min-width: 1100px) {
   #body-size {
     width: 85%;
     margin: auto;
+  }
+
+  .latest .latest-img-box {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  .about .about-box1 p {
+    font-size: 1.2vw;
+  }
+
+  .about .about-box2 {
+    grid-template-columns: 50% 50%;
+    font-size: 1.2vw;
+  }
+  .about .about-box2 .text-container {
+    margin-left: 10px;
   }
 }
 
@@ -239,7 +274,6 @@ label #cancel {
 .latest .latest-img-box {
   display: grid;
   text-decoration: none;
-  grid-template-columns: 25% 25% 25% 25%;
 }
 
 .latest .latest-img-box .image-wrapper {
@@ -279,7 +313,58 @@ label #cancel {
   bottom: 0;
   height: 100%;
   margin-bottom: -1px;
-  /* width: 98%; */
+}
+
+.about {
+  display: block;
+}
+
+.about h4 {
+  margin-top: 80px;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #2b2b2b;
+}
+.about .about-box1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.about .about-box1 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about .about-box1 p {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-90%, -50%);
+  color: #e7e6e6;
+  font-family: asap;
+  text-align: left;
+  max-width: 40%;
+}
+
+.about .about-box2 {
+  display: grid;
+}
+
+.about .about-box2 img {
+  width: 100%;
+  height: auto;
+}
+.about .about-box2 .text-container {
+  background-color: #e7e6e6;
+  text-align: justify;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 7%;
+}
+.about .about-box2 .text-container p {
+  font-family: asap;
+  max-width: 90%;
 }
 
 /* list */
