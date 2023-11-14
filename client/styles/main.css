@@ -159,7 +159,6 @@ label #cancel {
   nav ul li a {
     font-size: 16px;
   }
-  /* 여기부터 */
 
   nav ul ul {
     top: 70px;
@@ -220,31 +219,79 @@ label #cancel {
   }
 }
 
-/* main */
+/* Home */
 
 .slide {
   z-index: 1;
 }
 .slide .text {
-  font-family: 'Asap';
+  font-family: 'Roboto';
   text-shadow: 2px 2px 2px #ababab;
-}
-
-.slide .text h5 {
-  /* background-color: white; */
   color: black;
-  /* font-weight: bold; */
 }
 
-.favorite {
-  margin-top: 100px;
+.latest {
+  margin-top: 80px;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #2b2b2b;
 }
+
+.latest .latest-img-box {
+  display: grid;
+  text-decoration: none;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.latest .latest-img-box .image-wrapper {
+  position: relative;
+  padding-inline: 2px;
+}
+
+.latest .latest-img-box .image-wrapper img {
+  width: 100%;
+  height: 20rem;
+  display: block;
+  object-fit: cover;
+}
+
+.latest .latest-img-box .image-wrapper .overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0.5%;
+  bottom: 100%;
+  height: 0;
+  width: 99%;
+  overflow: hidden;
+  background: rgba(2, 2, 2, 0.2);
+  transition: all 0.35s ease-in-out;
+  font-family: 'asap';
+  color: #f5f5f5;
+
+  /* Fallback for Safari on iOS 9+ */
+  -webkit-backdrop-filter: brightness(90%);
+  /* Standard syntax */
+  backdrop-filter: brightness(90%);
+}
+
+.latest .latest-img-box .image-wrapper:hover .overlay {
+  bottom: 0;
+  height: 100%;
+  margin-bottom: -1px;
+  /* width: 98%; */
+}
+
+/* list */
+.favorite {
+  margin-top: 80px;
+}
+
 .favorite img {
   width: 100%;
 }
 
 /* main category */
-
 
 .main .thumbnail {
   position: relative;
@@ -290,17 +337,15 @@ label #cancel {
 
 .sub-nav {
   text-align: center;
-
 }
 /* sub category */
-.sub h2{
-text-align: center;
-margin-top: 100px;
-/* text-transform: uppercase; */
-font-family: 'asap';
+.sub h2 {
+  text-align: center;
+  margin-top: 100px;
+  /* text-transform: uppercase; */
+  font-family: 'asap';
 }
 
 .sub .sub-nav {
   margin-top: 30px;
-
 }

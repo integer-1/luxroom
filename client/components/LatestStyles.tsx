@@ -3,7 +3,6 @@ import { getLatestChairs } from '../apis/chairs.ts'
 import { Chair } from '../../models/chairs.ts'
 import { Link } from 'react-router-dom'
 import LoadingPage from './LoadingPage.tsx'
-import { Container, Row, Col } from 'react-bootstrap'
 
 const LatestStyles = () => {
   const {
@@ -24,28 +23,28 @@ const LatestStyles = () => {
   }
 
   if (!chairs || isLoading) return <LoadingPage />
+  const latestChairs = chairs.slice(0, 4);
 
   return (
-    <div className="favorite">
-      <h3>Shop Our Latest Styles</h3>
-      <Container>
-        <Row>
-          {chairs.map((chair: Chair, index: number) => {
-            return (
-              <Col sm={3} md={3} lg={3} key={index}>
-                <Link
-                  to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
-                >
-                  <img
-                    src={`../../Public/${chair.code}.jpg`}
-                    alt={chair.name}
-                  />
-                </Link>
-              </Col>
-            )
-          })}
-        </Row>
-      </Container>
+    <div className="latest">
+      <h4>Shop Our Latest Styles</h4>
+      <div className="latest-img-box">
+        {latestChairs.map((chair: Chair, index: number) => {
+          return (
+            <Link
+              key={index}
+              to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
+            >
+              <div className="image-wrapper">
+                <img src={`../../Public/${chair.code}.jpg`} alt={chair.name} />
+                <div className="overlay">
+                  <p>{chair.name.replace(/-/g, ' ')}</p>
+                </div>
+              </div>
+            </Link>
+          )
+        })}
+      </div>
     </div>
   )
 }
