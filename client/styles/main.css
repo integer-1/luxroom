@@ -434,3 +434,59 @@ label #cancel {
 .sub .sub-nav {
   margin-top: 30px;
 }
+
+/* Detail */
+.detail-container {
+  margin-top: 80px;
+}
+
+.detail-container .link-container > * {
+  display: inline-block;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.detail-container .link-container p,
+.detail-container .link-container .home-link,
+.detail-container .link-container .main-link {
+  color: #ababab;
+}
+
+.item-container .image-container,
+.item-container .item-header {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+.item-container .image-container img {
+  width: 100%;
+  padding: 2rem;
+}
+
+.item-container .item-header {
+  padding: 2rem;
+}
+.item-container .item-header p {
+  font-size: 16px;
+}
+
+.item-detail {
+  margin: 2rem;
+}
+
+.block-one,.block-two{
+  /* display: inline-block; */
+  width: 90%;
+  /* vertical-align: top; */
+
+}
+
+.item-detail .detail-heading {
+  font-size: 16px;
+  font-weight: bold;
+}
+.item-detail .detail-content {
+  font-size: 14px;
+  margin-left: 10px;
+}

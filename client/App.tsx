@@ -1,7 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
-import FavoriteFurniture from './components/FavoriteFurniture'
 import FurnitureMain from './components/HomeSlide'
-import { getChairs } from './apiClient'
 import LatestStyles from './components/LatestStyles'
 
 function App() {
@@ -10,7 +7,6 @@ function App() {
       <div className="furniture-view">
         <FurnitureMain />
         <LatestStyles />
-        {/* <FavoriteFurniture /> */}
       </div>
     </>
   )

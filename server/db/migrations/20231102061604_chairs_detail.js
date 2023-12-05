@@ -11,8 +11,10 @@ export async function up(knex) {
     table.integer('width')
     table.string('frameType')
     table.string('color')
-    table.string('description')
-    table.specificType('etc', 'text[]')
+    table.string('detail')
+    table.string('feature_1')
+    table.string('feature_2')
+    table.string('feature_3')
   })
 }
 

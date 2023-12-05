@@ -3,7 +3,7 @@ import { getDetail } from '../db/db.ts'
 
 const router = express.Router()
 
-router.get('/detail', (req, res) => {
+router.get('/', (req, res) => {
   getDetail()
     .then((detail) => {
       res.json(detail)

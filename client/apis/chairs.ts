@@ -16,3 +16,8 @@ export async function getLatestChairs() {
   const res = await request.get(rootUrl + `/chairs/latest`)
   return res.body
 }
+
+export async function getChairsDetail() {
+  const res = await request.get(rootUrl + `/detail`)
+  return res.body
+}

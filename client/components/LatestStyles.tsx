@@ -23,6 +23,7 @@ const LatestStyles = () => {
   }
 
   if (!chairs || isLoading) return <LoadingPage />
+
   const latestChairs = chairs.slice(0, 4);
 
   return (
@@ -34,6 +35,8 @@ const LatestStyles = () => {
             <Link
               key={index}
               to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
+              state={chair}
+
             >
               <div className="image-wrapper">
                 <img src={`../../Public/${chair.code}.jpg`} alt={chair.name} />

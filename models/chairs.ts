@@ -9,12 +9,14 @@ export interface Chair {
 }
 
 export interface ChairDetail {
-  itemCode: number
+  item_code: number
   height: number
   depth: number
   width: number
   frameType: string
   color: string
-  description: string
-  etc: string[]
+  detail: string
+  feature_1: string
+  feature_2: string
+  feature_3: string
 }

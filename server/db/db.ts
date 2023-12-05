@@ -21,5 +21,5 @@ export async function getLatestChairs(): Promise<Chair[]> {
 }
 
 export async function getDetail(): Promise<ChairDetail[]> {
-  return db('detail').select('*')
+  return db('chairs_detail').select('*')
 }
