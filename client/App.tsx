@@ -1,13 +1,10 @@
-import FurnitureMain from './components/HomeSlide'
-import LatestStyles from './components/LatestStyles'
-
+import Footer from './components/Footer.tsx'
+import { Outlet } from 'react-router'
 function App() {
   return (
     <>
-      <div className="furniture-view">
-        <FurnitureMain />
-        <LatestStyles />
-      </div>
+      <Outlet />
+      <Footer />
     </>
   )
 }

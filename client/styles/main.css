@@ -476,10 +476,7 @@ label #cancel {
 }
 
 .block-one,.block-two{
-  /* display: inline-block; */
   width: 90%;
-  /* vertical-align: top; */
-
 }
 
 .item-detail .detail-heading {
