@@ -1,32 +1,44 @@
 import { Link } from 'react-router-dom'
+import { InstagramIcon } from './Icon'
 
 const Footer = () => {
   return (
-    <div>
+    <div className="footer-box">
       <hr></hr>
-      <p>LUCLOOM</p>
 
-      <div className="support">
-        <p> Help & Support</p>
-        <Link to="/">Shipping Info</Link>
-        <Link to="/">Returns & Exchanges</Link>
-        <Link to="/">FAQs</Link>
+      <img src="./logo.jpg" alt="logo" />
+      <div className="footer-content">
+        <div className="support">
+          <p>Help & Support</p>
+          <Link to="/support/shipping">Shipping Info</Link>
+          <Link to="/support/refund">Returns & Exchanges</Link>
+          <Link to="/">FAQs</Link>
+        </div>
+        <div className="about">
+          <p>About LUXLOOM</p>
+          <Link to="/luxloom/us">About Us</Link>
+          <Link to="/luxloom/contact">Contact Us</Link>
+          <Link to="/luxloom/location">Store Locations</Link>
+        </div>
+        <div className="account">
+          <p>My Account</p>
+          <Link to="/">Your Cart</Link>
+          <Link to="/">Wishlist</Link>
+          <Link to="/">Sign Up</Link>
+        </div>
       </div>
-      <div className="account">
-        <p> My Account</p>
-        <Link to="/">Your Cart</Link>
-        <Link to="/">Wishlist</Link>
-        <Link to="/">Sign Up</Link>
+      <div className="social">
+        <Link to="/">
+          <InstagramIcon />
+        </Link>
+        <Link to="/">
+          <InstagramIcon />
+        </Link>
+        <Link to="/">
+          <InstagramIcon />
+        </Link>
       </div>
-      <div className="about">
-        <p>About LUCLOOM</p>
-        <Link to="/">About us</Link>
-        <Link to="/">Contact Us</Link>
-        <Link to="/">Store Locations</Link>
-      </div>
-
-
-      <p>Copyright © 2023 integer::1</p>
+      <p className="copyright">Copyright © 2023 integer::1</p>
     </div>
   )
 }
