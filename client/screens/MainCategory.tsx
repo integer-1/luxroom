@@ -42,7 +42,8 @@ const MainCategory = () => {
                 <div className="main-category-list" key={chair.code}>
                   <Link
                     to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
-                  >
+                    state={chair}
+                    >
                     <img src={`../../${chair.code}.jpg`} alt={chair.name} />
                     <p className="main-category-list">{chair.name}</p>
                   </Link>

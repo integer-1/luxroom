@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { getChairsDetail } from '../apis/chairs'
 import LoadingPage from '../components/LoadingPage'
 import { ChairDetail } from '../../models/chairs'
+import AddCart from '../components/AddCart'
 
 const Detail = () => {
   const { state } = useLocation()
@@ -60,6 +61,7 @@ const Detail = () => {
           <hr></hr>
 
           <p>{state.description}</p>
+          {/* <AddCart itemCode={state.code} /> */}
         </div>
         <hr></hr>
         <div className="item-detail">

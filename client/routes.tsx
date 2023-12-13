@@ -5,9 +5,12 @@ import Home from './screens/Home.tsx'
 import MainCategory from './screens/MainCategory.tsx'
 import SubCategory from './screens/SubCategory.tsx'
 import Detail from './screens/Detail.tsx'
-import Shipping from './components/Shipping.tsx'
-import Refund from './components/Refund.tsx'
-import AboutUs from './components/AboutUs.tsx'
+import Shipping from './components/info/Shipping.tsx'
+import Refund from './components/info/Refund.tsx'
+import AboutUs from './components/info/AboutUs.tsx'
+import Contact from './components/info/Contact.tsx'
+import Location from './components/info/Location.tsx'
+import Cart from './components/AddCart.tsx'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
@@ -18,5 +21,8 @@ export const routes = createRoutesFromElements(
     <Route path="/support/shipping" element={<Shipping />} />
     <Route path="/support/refund" element={<Refund />} />
     <Route path="/luxloom/us" element={<AboutUs />} />
+    <Route path="/luxloom/contact" element={<Contact />} />
+    <Route path="/luxloom/location" element={<Location />} />
+    <Route path="/my/cart" element={<Cart />} />
   </Route>
 )

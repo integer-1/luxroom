@@ -11,7 +11,6 @@ interface CategoryProps {
 }
 
 const ListBySub: React.FC<CategoryProps> = ({ mainCategory, subCategory }) => {
-
   const {
     data: chairs,
     isError,
@@ -23,7 +22,7 @@ const ListBySub: React.FC<CategoryProps> = ({ mainCategory, subCategory }) => {
 
   if (isError) return <p>Something went wrong!</p>
 
-  if (!chairs || isLoading) return <LoadingPage/>
+  if (!chairs || isLoading) return <LoadingPage />
 
   const filteredChairs = chairs.filter(
     (chair: Chair) => chair.subCategory === subCategory
@@ -36,7 +35,10 @@ const ListBySub: React.FC<CategoryProps> = ({ mainCategory, subCategory }) => {
           {filteredChairs.length > 0 ? (
             filteredChairs.map((chair: Chair, index: number) => (
               <Col sm={12} md={6} lg={3} key={index}>
-                <Link to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}>
+                <Link
+                  to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
+                  state={chair}
+                >
                   <img
                     src={`../../Public/${chair.code}.jpg`}
                     alt={chair.name}

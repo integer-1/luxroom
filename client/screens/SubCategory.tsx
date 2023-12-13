@@ -4,6 +4,7 @@ import ListBySub from '../components/ListBySub'
 
 const SubCategory = () => {
   const { mainCategory, subCategory } = useParams()
+  
 
   if (mainCategory === undefined || subCategory === undefined) {
     return <p>Please Check Category</p>

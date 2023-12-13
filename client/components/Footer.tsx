@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
         <div className="account">
           <p>My Account</p>
-          <Link to="/">Your Cart</Link>
+          <Link to="/my/cart">My Cart</Link>
           <Link to="/">Wishlist</Link>
           <Link to="/">Sign Up</Link>
         </div>

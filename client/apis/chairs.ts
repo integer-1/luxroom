@@ -21,3 +21,4 @@ export async function getChairsDetail() {
   const res = await request.get(rootUrl + `/detail`)
   return res.body
 }
+

@@ -4,6 +4,7 @@ import express from 'express'
 
 import chairsRoutes from './routes/chairs.ts'
 import detailRoutes from './routes/detail.ts'
+import cartRoutes from './routes/cart.ts'
 
 const __filename = URL.fileURLToPath(import.meta.url)
 const __dirname = Path.dirname(__filename)
@@ -15,6 +16,8 @@ server.use(express.static(Path.join(__dirname, 'public')))
 
 server.use('/api/v1/chairs', chairsRoutes)
 server.use('/api/v1/detail', detailRoutes)
+server.use('/api/v1/cart', cartRoutes)
+
 
 server.use('/api/*', (req, res) => {
   res.sendStatus(404)
