@@ -6,29 +6,38 @@ import { Tooltip } from 'react-bootstrap'
 import { OverlayTrigger } from 'react-bootstrap'
 
 const Login = () => {
-  const { loginWithRedirect, logout } = useAuth0()
+  const { loginWithRedirect, logout, user } = useAuth0()
 
   return (
     <div id="login">
       <IfAuthenticated>
+        <p className="hello">Hello, {user?.nickname}</p>
         <OverlayTrigger
-          overlay={<Tooltip id="tooltip-disabled">Logout</Tooltip>}
+          key={'left'}
+          placement={'left'}
+          overlay={<Tooltip id="tooltip-left">Logout</Tooltip>}
         >
           <button className="logout-button" onClick={() => logout()}>
             <LogoutIcon />
           </button>
         </OverlayTrigger>
         <OverlayTrigger
-          overlay={<Tooltip id="tooltip-disabled">My Cart</Tooltip>}
+          key={'left'}
+          placement={'left'}
+          overlay={<Tooltip id="tooltip-left">My Cart</Tooltip>}
         >
-          <Link to="/my/cart">
+          <Link className="cart-button" to="/my/cart">
             <CartIcon />
           </Link>
         </OverlayTrigger>
       </IfAuthenticated>
       <IfNotAuthenticated>
+        <p className="hello">Welcome</p>
+
         <OverlayTrigger
-          overlay={<Tooltip id="tooltip-disabled">Login</Tooltip>}
+          key={'left'}
+          placement={'left'}
+          overlay={<Tooltip id="tooltip-left">Login</Tooltip>}
         >
           <button className="login-button" onClick={() => loginWithRedirect()}>
             <LoginIcon />
