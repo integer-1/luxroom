@@ -8,18 +8,28 @@ export async function getCart() {
   return res.body
 }
 
+export async function getCartByAuth0Id(auth0Id : string) {
+  const res = await request.get(rootUrl + `/cart/${auth0Id}`)
+  return res.body
+}
+
+export async function getCartByAuth0IdWithDetail(auth0Id : string) {
+  const res = await request.get(rootUrl + `/cart/detail/${auth0Id}`)
+  return res.body
+}
+
 export async function addCart(newCart: NewCart): Promise<void> {
   await request.post(rootUrl + '/cart').send({ ...newCart })
 }
 
 export async function updateCart({
   id,
-  cart,
+  updatedCart,
 }: {
   id: number
-  cart: Cart
+  updatedCart: Cart
 }): Promise<void> {
-  await request.patch(rootUrl + `/cart/${id}`).send(cart)
+  await request.patch(rootUrl + `/cart/${id}`).send(updatedCart)
 }
 
 export async function deleteCart(id: number): Promise<void> {

@@ -1,6 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { addCart, updateCart, deleteCart } from '../../apis/cart'
-import { Cart } from '../../../models/cart'
 
 export function useCart() {
   const queryClient = useQueryClient()

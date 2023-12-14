@@ -6,7 +6,7 @@ export async function getChairs(): Promise<Chair[]> {
   return db('chairs').select('*')
 }
 
-export async function getChairById(code: number): Promise<Chair[]> {
+export async function getChairByCode(code: number): Promise<Chair[]> {
   return db('chairs').where({ code }).select()
 }
 
@@ -29,6 +29,26 @@ export async function getCart(): Promise<Cart[]> {
   return db('cart').select('*')
 }
 
+export async function getCartByAuth0Id(auth0Id: string): Promise<Cart[]> {
+  return db('cart').where({ auth0Id }).select()
+}
+
+export async function getCartByAuth0IdWithDetail(
+  auth0Id: string
+): Promise<Cart[]> {
+  return db('cart')
+    .where({ auth0Id })
+    .join('chairs', 'cart.item_code', 'chairs.code')
+    .select(
+      'cart.id',
+      'cart.item_code',
+      'cart.auth0Id',
+      'cart.quantity',
+      'chairs.name',
+      'chairs.price'
+    )
+}
+
 export async function addCart(cart: Cart): Promise<Cart[]> {
   return db('cart')
     .insert({ ...cart })
@@ -36,7 +56,7 @@ export async function addCart(cart: Cart): Promise<Cart[]> {
 }
 
 export async function updateCart(id: number, updatedCart: Cart) {
-  return db('recipes')
+  return db('cart')
     .where({ id })
     .update({ ...updatedCart })
     .returning(['id', 'auth0Id', 'item_code', 'quantity'])

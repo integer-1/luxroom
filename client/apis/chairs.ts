@@ -22,3 +22,7 @@ export async function getChairsDetail() {
   return res.body
 }
 
+export async function getChairByCode(code: number) {
+  const res = await request.get(rootUrl + `/chair/${code}`)
+  return res.body
+}

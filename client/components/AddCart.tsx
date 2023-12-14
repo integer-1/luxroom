@@ -1,23 +1,34 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated.tsx'
-import { useLocation, useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useCart } from './hooks/useCart.ts'
-import cart from '../../server/db/data/cart.js'
-import { NewCart } from '../../models/cart.ts'
+import { Cart, NewCart } from '../../models/cart.ts'
+import LoadingPage from './LoadingPage.tsx'
+import { useQuery } from '@tanstack/react-query'
+import { getCartByAuth0Id } from '../apis/cart.ts'
 
 interface ItemCodeProps {
   itemCode: number
 }
 
 const AddCart: React.FC<ItemCodeProps> = ({ itemCode }) => {
+  const navigate = useNavigate()
   const { user } = useAuth0()
   const auth0Id = user?.sub
+  const { addCartMutation, updateCartMutation } = useCart()
 
-  const navigate = useNavigate()
+  const {
+    data: cart,
+    isError,
+    isLoading,
+  } = useQuery({
+    queryKey: ['cart', auth0Id],
+    queryFn: () => getCartByAuth0Id(auth0Id as string),
+  })
 
-  const { addCartMutation } = useCart()
+  if (isError || !auth0Id) return <p>Authentication error. Please log in.</p>
 
-  if (auth0Id === undefined) return <p>error</p>
+  if (!cart || isLoading) return <LoadingPage />
 
   const newCart: NewCart = {
     auth0Id: auth0Id,
@@ -26,13 +37,34 @@ const AddCart: React.FC<ItemCodeProps> = ({ itemCode }) => {
   }
 
   const handleAdd = () => {
+
     try {
-      addCartMutation.mutate(newCart, {
-        onSuccess: () => {
-          navigate('/')
-          window.location.reload()
-        },
-      })
+      const existingCartItem: Cart = cart.find(
+        (item: Cart) => item.item_code === itemCode
+      )
+
+      if (existingCartItem) {
+        // If it exists, update the quantity
+        const updatedCart= {
+          ...existingCartItem,
+          quantity: existingCartItem.quantity + 1,
+        }
+        const id = existingCartItem.id
+
+        updateCartMutation.mutate({ id, updatedCart},{
+          onSuccess: () => {
+            navigate('/my/cart')
+          },
+        } )
+
+      } else {
+        // If it doesn't exist, add a new item to the cart
+        addCartMutation.mutate(newCart, {
+          onSuccess: () => {
+            navigate('/my/cart')
+          },
+        })
+      }
     } catch (error) {
       const message = `Sorry, We can't save your recipe`
       return (

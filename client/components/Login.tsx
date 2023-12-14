@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 
 const Login = () => {
   const { loginWithRedirect, logout, user } = useAuth0()
-
-  console.log(user?.sub)
   
   return (
     <div id="login">
@@ -20,8 +18,6 @@ const Login = () => {
         </button>
       </IfAuthenticated>
       <IfNotAuthenticated>
-        {/* <p>Please log in here</p> */}
-
         <button className="button" onClick={() => loginWithRedirect()}>
           Login
         </button>

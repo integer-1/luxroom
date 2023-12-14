@@ -9,25 +9,25 @@ const Contact: React.FC = () => {
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const result = await emailjs
-      .send(
-        'service_7sox6rw',
-        'template_y16c80k',
-        form.current,
-        'biIaEEGdP4KjPGqXR'
-      )
-      .then(
-        (result) => {
-          console.log(result.text)
-        },
-        (error) => {
-          console.log(error.text)
-        }
-      )
+    // const result = await emailjs
+    //   .send(
+    //     'service_7sox6rw',
+    //     'template_y16c80k',
+    //     form.current,
+    //     'biIaEEGdP4KjPGqXR'
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text)
+    //     },
+    //     (error) => {
+    //       console.log(error.text)
+    //     }
+    //   )
 
     e.currentTarget.reset()
 
-    console.log(result.text)
+    // console.log(result.text)
   }
 
   return (

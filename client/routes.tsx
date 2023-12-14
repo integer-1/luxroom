@@ -10,7 +10,7 @@ import Refund from './components/info/Refund.tsx'
 import AboutUs from './components/info/AboutUs.tsx'
 import Contact from './components/info/Contact.tsx'
 import Location from './components/info/Location.tsx'
-import Cart from './components/AddCart.tsx'
+import MyCart from './components/info/MyCart.tsx'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
@@ -23,6 +23,6 @@ export const routes = createRoutesFromElements(
     <Route path="/luxloom/us" element={<AboutUs />} />
     <Route path="/luxloom/contact" element={<Contact />} />
     <Route path="/luxloom/location" element={<Location />} />
-    <Route path="/my/cart" element={<Cart />} />
+    <Route path="/my/cart" element={<MyCart />} />
   </Route>
 )

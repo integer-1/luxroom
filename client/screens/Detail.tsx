@@ -61,7 +61,7 @@ const Detail = () => {
           <hr></hr>
 
           <p>{state.description}</p>
-          {/* <AddCart itemCode={state.code} /> */}
+          <AddCart itemCode={state.code} />
         </div>
         <hr></hr>
         <div className="item-detail">
