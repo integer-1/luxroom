@@ -1,5 +1,4 @@
 import { useAuth0 } from '@auth0/auth0-react'
-import { IfAuthenticated, IfNotAuthenticated } from './Authenticated.tsx'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from './hooks/useCart.ts'
 import { Cart, NewCart } from '../../models/cart.ts'
@@ -37,7 +36,6 @@ const AddCart: React.FC<ItemCodeProps> = ({ itemCode }) => {
   }
 
   const handleAdd = () => {
-
     try {
       const existingCartItem: Cart = cart.find(
         (item: Cart) => item.item_code === itemCode
@@ -45,18 +43,20 @@ const AddCart: React.FC<ItemCodeProps> = ({ itemCode }) => {
 
       if (existingCartItem) {
         // If it exists, update the quantity
-        const updatedCart= {
+        const updatedCart = {
           ...existingCartItem,
           quantity: existingCartItem.quantity + 1,
         }
         const id = existingCartItem.id
 
-        updateCartMutation.mutate({ id, updatedCart},{
-          onSuccess: () => {
-            navigate('/my/cart')
-          },
-        } )
-
+        updateCartMutation.mutate(
+          { id, updatedCart },
+          {
+            onSuccess: () => {
+              navigate('/my/cart')
+            },
+          }
+        )
       } else {
         // If it doesn't exist, add a new item to the cart
         addCartMutation.mutate(newCart, {
@@ -77,14 +77,9 @@ const AddCart: React.FC<ItemCodeProps> = ({ itemCode }) => {
 
   return (
     <div>
-      <IfAuthenticated>
-        <button className="button" onClick={() => handleAdd()}>
-          Add cart
-        </button>
-      </IfAuthenticated>
-      <IfNotAuthenticated>
-        <p>Please log in for order</p>
-      </IfNotAuthenticated>
+      <button className="button" onClick={() => handleAdd()}>
+        Add cart
+      </button>
     </div>
   )
 }
