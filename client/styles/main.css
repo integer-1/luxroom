@@ -12,7 +12,6 @@
   justify-content: flex-end;
   margin-right: 1rem;
   align-items: center;
-  display: flex;
   margin-bottom: -40px;
 }
 
@@ -512,6 +511,12 @@ label #cancel {
   font-size: 16px;
 }
 
+.item-container .item-header .login-mention{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+}
+
 .item-detail {
   margin: 2rem;
 }
@@ -576,3 +581,21 @@ label #cancel {
 }
 
 /* Cart */
+
+#add-cart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#add-cart .add-cart-mention {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+#add-cart .add-cart-button {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}

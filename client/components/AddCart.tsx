@@ -5,6 +5,7 @@ import { Cart, NewCart } from '../../models/cart.ts'
 import LoadingPage from './LoadingPage.tsx'
 import { useQuery } from '@tanstack/react-query'
 import { getCartByAuth0Id } from '../apis/cart.ts'
+import { CartIcon } from './Icon.tsx'
 
 interface ItemCodeProps {
   itemCode: number
@@ -76,9 +77,10 @@ const AddCart: React.FC<ItemCodeProps> = ({ itemCode }) => {
   }
 
   return (
-    <div>
-      <button className="button" onClick={() => handleAdd()}>
-        Add cart
+    <div id="add-cart">
+      <p className="add-cart-mention">Add cart</p>
+      <button className="add-cart-button" onClick={() => handleAdd()}>
+        <CartIcon />
       </button>
     </div>
   )

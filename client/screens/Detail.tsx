@@ -1,5 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
-import { IfAuthenticated, IfNotAuthenticated } from '../components/Authenticated'
+import {
+  IfAuthenticated,
+  IfNotAuthenticated,
+} from '../components/Authenticated'
 import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 import { getChairsDetail } from '../apis/chairs'
@@ -60,13 +63,13 @@ const Detail = () => {
           <h3>{state.name.replace(/-/g, ' ')}</h3>
           <h5>$ {state.price}</h5>
           <hr></hr>
-          <p>{state.description}</p>
           <IfAuthenticated>
             <AddCart itemCode={state.code} />
           </IfAuthenticated>
           <IfNotAuthenticated>
-            <p>Please log in for order</p>
+            <p className="login-mention">Please log in to order 😊</p>
           </IfNotAuthenticated>
+          <p>{state.description}</p>
         </div>
         <hr></hr>
         <div className="item-detail">

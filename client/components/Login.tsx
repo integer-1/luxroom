@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
-import { CartIcon, LoginIcon, LogoutIcon } from './Icon'
+import { LogonCartIcon, LoginIcon, LogoutIcon } from './Icon'
 import { Link } from 'react-router-dom'
 import { Tooltip } from 'react-bootstrap'
 import { OverlayTrigger } from 'react-bootstrap'
@@ -27,12 +27,12 @@ const Login = () => {
           overlay={<Tooltip id="tooltip-left">My Cart</Tooltip>}
         >
           <Link className="cart-button" to="/my/cart">
-            <CartIcon />
+            <LogonCartIcon />
           </Link>
         </OverlayTrigger>
       </IfAuthenticated>
       <IfNotAuthenticated>
-        <p className="hello">Welcome</p>
+        <p className="hello">Welcome </p>
 
         <OverlayTrigger
           key={'left'}
