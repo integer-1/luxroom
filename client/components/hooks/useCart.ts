@@ -4,20 +4,24 @@ import { addCart, updateCart, deleteCart } from '../../apis/cart'
 export function useCart() {
   const queryClient = useQueryClient()
 
-  const addCartMutation = useMutation(addCart, {
+  const addCartMutation = useMutation({
+    mutationFn: addCart,
     onSuccess: async () => {
-      queryClient.invalidateQueries(['cart'])
-    },
-  })
-  const updateCartMutation = useMutation(updateCart, {
-    onSuccess: async () => {
-      queryClient.invalidateQueries(['cart'])
+      queryClient.invalidateQueries({ queryKey: ['cart'] })
     },
   })
 
-  const deleteCartMutation = useMutation(deleteCart, {
+  const updateCartMutation = useMutation({
+    mutationFn: updateCart,
     onSuccess: async () => {
-      queryClient.invalidateQueries(['cart'])
+      queryClient.invalidateQueries({ queryKey: ['cart'] })
+    },
+  })
+
+  const deleteCartMutation = useMutation({
+    mutationFn: deleteCart,
+    onSuccess: async () => {
+      queryClient.invalidateQueries({ queryKey: ['cart'] })
     },
   })
   return {
