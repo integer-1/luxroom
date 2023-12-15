@@ -36,8 +36,10 @@ const ListBySub: React.FC<CategoryProps> = ({ mainCategory, subCategory }) => {
               to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
               state={chair}
             >
-              <img src={`../../Public/${chair.code}.jpg`} alt={chair.name} />
-              <p className="sub-category-list-name">{chair.name.replace(/-/g, ' ')}</p>
+              <img src={`../${chair.code}.jpg`} alt={chair.name} />
+              <p className="sub-category-list-name">
+                {chair.name.replace(/-/g, ' ')}
+              </p>
             </Link>
             <p className="sub-category-list-price">${chair.price}</p>
           </div>

@@ -24,7 +24,7 @@ const LatestStyles = () => {
 
   if (!chairs || isLoading) return <LoadingPage />
 
-  const latestChairs = chairs.slice(0, 4);
+  const latestChairs = chairs.slice(0, 4)
 
   return (
     <div className="latest">
@@ -36,10 +36,9 @@ const LatestStyles = () => {
               key={index}
               to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
               state={chair}
-
             >
               <div className="image-wrapper">
-                <img src={`../../Public/${chair.code}.jpg`} alt={chair.name} />
+                <img src={`../${chair.code}.jpg`} alt={chair.name} />
                 <div className="overlay">
                   <p>{chair.name.replace(/-/g, ' ')}</p>
                 </div>
