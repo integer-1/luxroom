@@ -11,6 +11,7 @@ import AboutUs from './components/info/AboutUs.tsx'
 import Contact from './components/info/Contact.tsx'
 import Location from './components/info/Location.tsx'
 import MyCart from './components/info/MyCart.tsx'
+import QandA from './components/info/QandA.tsx'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
@@ -20,6 +21,7 @@ export const routes = createRoutesFromElements(
     <Route path="/:mainCategory/:subCategory/:name" element={<Detail />} />
     <Route path="/support/shipping" element={<Shipping />} />
     <Route path="/support/refund" element={<Refund />} />
+    <Route path="/support/QandA" element={<QandA />} />
     <Route path="/luxloom/us" element={<AboutUs />} />
     <Route path="/luxloom/contact" element={<Contact />} />
     <Route path="/luxloom/location" element={<Location />} />

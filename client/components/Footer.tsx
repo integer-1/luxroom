@@ -16,7 +16,7 @@ const Footer = () => {
           <p>Help & Support</p>
           <Link to="/support/shipping">Shipping Info</Link>
           <Link to="/support/refund">Returns & Exchanges</Link>
-          <Link to="/">FAQs</Link>
+          <Link to="/support/QandA">FAQs</Link>
         </div>
         <div className="about">
           <p>About LUXLOOM</p>

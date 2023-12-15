@@ -1,7 +1,11 @@
+import { ConeIcon } from "../Icon"
 
 const Location = () => {
   return (
-    <div>Location</div>
+    <div className="shipping-info">
+    <h3>Location</h3>
+    <ConeIcon />Under construction<ConeIcon />
+  </div>
   )
 }
 
