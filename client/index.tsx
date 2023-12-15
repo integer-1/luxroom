@@ -15,7 +15,7 @@ root.render(
     clientId="tLQ4jzWrRDwbz1lfiYb4A5U1kER3J1R1"
     authorizationParams={{
       redirect_uri: window.location.origin,
-      audience: 'http://localhost:5173/',
+      audience: 'http://luxloom.devacademy.nz',
     }}
   >
     <QueryClientProvider client={queryClient}>
