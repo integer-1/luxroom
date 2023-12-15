@@ -403,7 +403,7 @@ label #cancel {
   padding: 7%;
 }
 .about .about-box2 .text-container p {
-  font-family: asap;
+  font-family: 'asap';
   max-width: 90%;
 }
 
@@ -439,6 +439,10 @@ label #cancel {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.sub-nav {
+  text-align: center;
+}
+
 .link-sub {
   margin-right: 50px;
   text-decoration: none;
@@ -456,18 +460,57 @@ label #cancel {
   font-size: 16px;
 }
 
-.main .main-category .main-category-list img {
-  width: 70%;
+.main .main-category-list {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.sub-nav {
-  text-align: center;
+.main-category-list-box {
+  width: 33%;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 26rem;
+  overflow: hidden;
+}
+
+.main-category-list-box a {
+  text-decoration: none;
+}
+
+.main-category-list-box img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.main-category-list-name {
+  color: #2b2b2b;
+  font-family: 'asap';
+  margin-left: 10px;
+
+}
+
+.main-category-list-sub {
+  margin-top: -10px;
+  margin-left: 10px;
+  color: #2b2b2b;
+  font-family: 'asap';
+  font-size: 13px;
+}
+
+.main-category-list-price {
+  margin-top: -10px;
+  margin-left: 10px;
+  font-family: 'asap';
+  color: #2b2b2b;
+  font-weight: bold;
 }
 
 /* sub category */
 .sub h2 {
-  text-align: center;
   margin-top: 100px;
+  text-align: center;
   font-family: 'asap';
 }
 
@@ -511,7 +554,7 @@ label #cancel {
   font-size: 16px;
 }
 
-.item-container .item-header .login-mention{
+.item-container .item-header .login-mention {
   display: flex;
   justify-content: flex-end;
   font-size: 14px;
