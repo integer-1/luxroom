@@ -1,10 +1,9 @@
-
 const AboutUs = () => {
   return (
     <div className="about">
       <h4>About Us</h4>
       <div className="about-box1">
-        <img src={`../../Public/about1.jpg`} alt="About us" />
+        <img src={`../about1.jpg`} alt="About us" />
         <p>
           We believe that a chair is not just a piece of furniture; <br />
           It&apos;s a statement of comfort, design, and quality. Our journey
@@ -14,8 +13,8 @@ const AboutUs = () => {
         </p>
       </div>
       <div className="about-box2">
-        <img src={`../../Public/about2.jpg`} alt="About us" />
-        <div className='text-container'>
+        <img src={`../about2.jpg`} alt="About us" />
+        <div className="text-container">
           <p>
             At the heart of our philosophy is a deep passion for comfort. We
             understand that your chair is more than just a place to sit;
