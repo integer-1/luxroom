@@ -5,7 +5,7 @@ import { JwtPayload } from 'jsonwebtoken'
 import jwks from 'jwks-rsa'
 
 const domain = 'luxloom.au.auth0.com'
-const audience = 'http://luxloom.devacademy.nz'
+const audience = 'http://luxloom.pushed.nz'
 
 const checkJwt = jwt({
   secret: jwks.expressJwtSecret({
