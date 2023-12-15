@@ -240,6 +240,7 @@ label #cancel {
   #check:checked ~ label #cancel {
     display: block;
   }
+
 }
 
 @media (max-width: 1100px) {
@@ -254,6 +255,9 @@ label #cancel {
   .latest .latest-img-box {
     grid-template-columns: 50% 50%;
   }
+
+
+
 }
 
 @media (max-width: 740px) {
@@ -269,6 +273,7 @@ label #cancel {
   .about .about-box2 .text-container {
     margin-left: 0px;
   }
+
 }
 
 @media only screen and (min-width: 1100px) {
@@ -651,19 +656,28 @@ label #cancel {
 }
 
 .footer-content {
-  margin-bottom: 2rem;
+  margin: 1rem 0 0 3rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-content .support,
 .footer-content .account,
-.footer-content .about {
-  margin-top: 20px;
+.footer-content .about,
+.footer-content .social {
   display: inline-block;
   vertical-align: top;
-  width: 33%;
+  box-sizing: border-box;
+  margin: 0;
+  margin-right: 2.2rem;
+}
+
+.footer-content .support p,
+.footer-content .account p,
+.footer-content .about p,
+.footer-content .social p {
+  color: #2b2b2b;
+  font-size: 15px;
 }
 
 .footer-content .support a,
@@ -674,8 +688,12 @@ label #cancel {
   margin-left: 5px;
   text-decoration: none;
   color: #2b2b2b;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 200;
+}
+
+.social a {
+  display: 'block';
 }
 
 .copyright {
@@ -796,9 +814,7 @@ label #cancel {
 }
 
 #cart .login-mention {
-margin: 20px;
-font-size: 20px;
-color: #2b2b2b;
-
-
+  margin: 20px;
+  font-size: 20px;
+  color: #2b2b2b;
 }

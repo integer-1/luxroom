@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query'
-import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { getChairByMain } from '../apis/chairs'
 import { Chair } from '../../models/chairs'

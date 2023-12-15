@@ -57,9 +57,7 @@ const NavBar = () => {
             </li>
           </ul>
         </li>
-        <li>
-          <a href="/">Sale</a>
-        </li>
+
       </ul>
     </nav>
   )

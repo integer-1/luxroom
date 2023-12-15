@@ -4,13 +4,13 @@ import { useAuth0 } from '@auth0/auth0-react'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
 const Footer = () => {
-  const { loginWithRedirect, logout, user } = useAuth0()
+  const { loginWithRedirect, logout } = useAuth0()
 
   return (
     <div className="footer-box">
       <hr></hr>
 
-      <img src="./logo.jpg" alt="logo" />
+      <img src="../logo.jpg" alt="logo" />
       <div className="footer-content">
         <div className="support">
           <p>Help & Support</p>
@@ -38,17 +38,12 @@ const Footer = () => {
             </Link>
           </IfNotAuthenticated>
         </div>
-      </div>
-      <div className="social">
-        <Link to="/">
-          <InstagramIcon />
-        </Link>
-        <Link to="/">
-          <InstagramIcon />
-        </Link>
-        <Link to="/">
-          <InstagramIcon />
-        </Link>
+        <div className="social">
+          <p>Social</p>
+          <Link to="https://www.instagram.com/luxloom_project/">
+            <InstagramIcon />
+          </Link>
+        </div>
       </div>
       <p className="copyright">Copyright © 2023 integer::1</p>
     </div>
