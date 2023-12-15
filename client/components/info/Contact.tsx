@@ -9,59 +9,75 @@ const Contact: React.FC = () => {
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // const result = await emailjs
-    //   .send(
-    //     'service_7sox6rw',
-    //     'template_y16c80k',
-    //     form.current,
-    //     'biIaEEGdP4KjPGqXR'
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text)
-    //     },
-    //     (error) => {
-    //       console.log(error.text)
-    //     }
-    //   )
+    if (form.current) {
+      emailjs
+        .sendForm(
+          'service_7sox6rw',
+          'template_y16c80k',
+          form.current,
+          'biIaEEGdP4KjPGqXR'
+        )
+        .then((result) => {
+          console.log(result.text)
+          console.log('message sent')
+        })
+        .catch((error) => {
+          console.log(error.text)
+        })
+    } else {
+      console.log('Form is null')
+    }
 
     e.currentTarget.reset()
-
-    // console.log(result.text)
   }
 
   return (
     <section>
-      <div className="container">
-        <h2>Contact Us</h2>
-        <div>
-          <PhoneIcon />
-          <h4>Phone</h4>
-          <p>09 181 818</p>
+      <div className="contact-container">
+        <h3>Contact Us</h3>
+        <div className="contact-box">
+          <div className="phone">
+            <PhoneIcon />
+            <p>Phone 09 181 818</p>
+          </div>
+          <div className="instagram">
+            <InstagramIcon />
+            <Link to="https://www.instagram.com/luxloom_project/">
+              luxloom_project
+            </Link>
+          </div>
+          <div className="email">
+            <EmailIcon />
+            <p>Email us</p>
+          </div>
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="email-form"
+            action=""
+          >
+            <input
+              type="text"
+              placeholder="Full Name"
+              name="user_name"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="user_email"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Subject"
+              name="user_subject"
+              required
+            />
+            <textarea name="message" />
+            <button>Send Message</button>
+          </form>
         </div>
-        <EmailIcon />
-        <h4>Email us</h4>
-        <InstagramIcon />
-        <Link to="https://www.instagram.com/luxloom_project/">
-        <h4>Instagram</h4>
-        </Link>
-        <form ref={form} onSubmit={sendEmail} className="email" action="">
-          <input
-            type="text"
-            placeholder="Full Name"
-            name="user_name"
-            required
-          />
-          <input type="email" placeholder="Email" name="user_email" required />
-          <input
-            type="text"
-            placeholder="Subject"
-            name="user_subject"
-            required
-          />
-          <textarea name="message" />
-          <button>Send Message</button>
-        </form>
       </div>
     </section>
   )

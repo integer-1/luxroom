@@ -817,3 +817,64 @@ label #cancel {
   font-size: 20px;
   color: #2b2b2b;
 }
+
+/* contact */
+.contact-container {
+  margin: 5%;
+  font-family: 'asap';
+}
+
+.contact-container h3 {
+  background-color: #2b2b2b;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #f5f5f5;
+  padding: 2%;
+}
+
+.contact-box {
+  margin: 20px 10px 20px 10px;
+}
+
+.phone,
+.instagram,
+.email {
+  display: flex;
+  align-items: center;
+  color: #2b2b2b;
+}
+
+.phone p,
+.email p {
+  margin-left: 20px;
+}
+
+.instagram a {
+  text-decoration: none;
+  color: #2b2b2b;
+  margin-left: 20px;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%; 
+  margin: 0 auto; 
+  font-family: 'Asap';
+}
+
+.email-form input,
+.email-form textarea,
+.email-form button {
+  margin-bottom: 10px;
+}
+
+.email-form textarea {
+  height: 200px;
+}
+
+.email-form button {
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+  border-style: none;
+  height: 30px;
+}
