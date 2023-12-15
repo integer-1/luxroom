@@ -615,6 +615,29 @@ label #cancel {
   margin-left: 10px;
 }
 
+/* shipping  */
+.shipping-info {
+  margin: 5%;
+  font-family: 'asap';
+}
+
+.shipping-info h3 {
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+  padding: 2%;
+}
+.shipping-info-box {
+  margin: 20px 10px 20px 10px;
+}
+
+.shipping-info-box h5 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.shipping-info-box p {
+  margin-left: 3px;
+}
 /* footer */
 
 .footer-box {
@@ -660,7 +683,7 @@ label #cancel {
   font-size: 12px;
 }
 
-/* Cart */
+/* Add Cart */
 
 #add-cart {
   display: flex;
@@ -678,4 +701,96 @@ label #cancel {
   padding: 0;
   background: none;
   cursor: pointer;
+}
+
+/* Cart Page*/
+
+#cart {
+  margin: 3%;
+  font-family: 'asap';
+}
+
+#cart h4 {
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+  padding: 2%;
+}
+
+.cart-container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart-container-box {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 35rem;
+  overflow: hidden;
+}
+
+.cart-container-box img {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+}
+
+.cart-container-box-name {
+  color: #2b2b2b;
+  font-family: 'asap';
+  margin-left: 10px;
+}
+
+.cart-container-box-price {
+  margin-top: -10px;
+  margin-left: 10px;
+  font-family: 'asap';
+  color: #2b2b2b;
+  font-weight: bold;
+}
+
+.quantity-button-box {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.quantity-button-box button,
+.quantity-button-box p {
+  border: 0.5px solid #ababab;
+  outline: none;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.quantity-button-box button {
+  width: 30px;
+  padding-left: 10px;
+  background-color: #2b2b2b;
+  color: white;
+}
+
+.quantity-button-box p {
+  width: 50px;
+  padding-left: 20px;
+}
+
+.total-price,
+.gst {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.total-price span {
+  margin: 0 5px 0 20px;
+}
+
+.gst {
+  font-size: 10px;
+  margin-top: -10px;
 }

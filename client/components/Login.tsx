@@ -13,7 +13,7 @@ const Login = () => {
       <IfAuthenticated>
         <p className="hello">Hello, {user?.nickname}</p>
         <OverlayTrigger
-          key={'left'}
+          key={'logout-left'}
           placement={'left'}
           overlay={<Tooltip id="tooltip-left">Logout</Tooltip>}
         >
@@ -22,7 +22,7 @@ const Login = () => {
           </button>
         </OverlayTrigger>
         <OverlayTrigger
-          key={'left'}
+          key={'cart-left'}
           placement={'left'}
           overlay={<Tooltip id="tooltip-left">My Cart</Tooltip>}
         >
@@ -35,7 +35,7 @@ const Login = () => {
         <p className="hello">Welcome </p>
 
         <OverlayTrigger
-          key={'left'}
+          key={'login-left'}
           placement={'left'}
           overlay={<Tooltip id="tooltip-left">Login</Tooltip>}
         >

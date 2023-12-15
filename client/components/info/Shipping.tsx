@@ -1,40 +1,34 @@
 const Shipping = () => {
   return (
-    <div>
-      <h2>Shipping Information</h2>
+    <div className="shipping-info">
+      <h3>Shipping Information</h3>
 
-      <div>
-        <h4>Shipping Cost</h4>
+      <div className="shipping-info-box">
+        <h5>Shipping Cost</h5>
 
-        <p>
-          New Zealand: Free shipping on orders over $150NZD (via courier 1 - 3
-          business days once dispatched) <br />
+        <p >
+          Free shipping on orders over $150NZD <br />
+          (via courier 1 - 3 business days once dispatched) <br />
           $20NZD shipping on orders under $150NZD (via courier 1 - 3 business
           days once dispatched) <br />
           Please allow extra days for delivery to rural addresses. <br />
           Please note we do not ship to PO Boxes so please provide a physical
           address during checkout.
         </p>
-        <h4>General Information</h4>
 
-        <ul>
-          <li>
-            Please make sure your order is correct. No order changes or
-            cancellations once the order has been placed.
-          </li>
-          <li>
-            Customs duties & taxes are the responsibility of the buyer for all
-            countries - if you refuse your parcel at customs due to the fees
-            your order will be destroyed by customs and will not be refunded by
-            LUXLOOM
-          </li>
-          <li>
-            We do not ship to PO Boxes - please do not use PO Boxes as your
-            delivery address or the order will not be dispatched
-          </li>
-        </ul>
+        <h5>General Information</h5>
+        <p>
+          Please make sure your order is correct. No order changes or
+          cancellations once the order has been placed. <br />
+          Customs duties & taxes are the responsibility of the buyer for all
+          countries - if you refuse your parcel at customs due to the fees your
+          order will be destroyed by customs and will not be refunded by LUXLOOM{' '}
+          <br />
+          We do not ship to PO Boxes - please do not use PO Boxes as your
+          delivery address or the order will not be dispatched
+        </p>
 
-        <h4>How long does it take for my order to be processed? </h4>
+        <h5>How long does it take for my order to be processed? </h5>
         <p>
           We aim to ship goods within 2 business days of receiving your order.
           Please note we ship orders on working days and weekend orders will be
