@@ -29,32 +29,23 @@ const ListBySub: React.FC<CategoryProps> = ({ mainCategory, subCategory }) => {
   )
 
   return (
-    <div className="favorite">
-      <Container>
-        <Row>
-          {filteredChairs.length > 0 ? (
-            filteredChairs.map((chair: Chair, index: number) => (
-              <Col sm={12} md={6} lg={3} key={index}>
-                <Link
-                  to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
-                  state={chair}
-                >
-                  <img
-                    src={`../../Public/${chair.code}.jpg`}
-                    alt={chair.name}
-                  />
-                  <p>{chair.name.replace(/-/g, ' ')}</p>
-                </Link>
-                <p>${chair.price}</p>
-              </Col>
-            ))
-          ) : (
-            <Col>
-              <p>No items</p>
-            </Col>
-          )}
-        </Row>
-      </Container>
+    <div className="sub-category-list">
+      {filteredChairs.length > 0 ? (
+        filteredChairs.map((chair: Chair) => (
+          <div className="sub-category-list-box" key={chair.code}>
+            <Link
+              to={`/${chair.mainCategory}/${chair.subCategory}/${chair.name}`}
+              state={chair}
+            >
+              <img src={`../../Public/${chair.code}.jpg`} alt={chair.name} />
+              <p className="sub-category-list-name">{chair.name.replace(/-/g, ' ')}</p>
+            </Link>
+            <p className="sub-category-list-price">${chair.price}</p>
+          </div>
+        ))
+      ) : (
+        <p>No items</p>
+      )}
     </div>
   )
 }
