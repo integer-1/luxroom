@@ -5,6 +5,7 @@ import { Cart, CartWithDetail } from '../../../models/cart'
 import { getCartByAuth0IdWithDetail } from '../../apis/cart'
 import LoadingPage from '../LoadingPage'
 import { useCart } from '../hooks/useCart'
+import { Spinner } from 'react-bootstrap'
 
 const MyCart = () => {
   const { user } = useAuth0()
@@ -111,13 +112,16 @@ const MyCart = () => {
         </p>
         <p className="gst">* INCLUDING GST</p>
         <hr />
-
       </IfAuthenticated>
       <IfNotAuthenticated>
-        <p>Please log in for cart</p>
+        <p className="login-mention">
+        <Spinner animation="grow" size="sm" style={{margin: 0, marginRight: '20px' }}/>
+          Check it out! To view your shopping cart, please log in.  
+        </p>
       </IfNotAuthenticated>
     </div>
   )
 }
 
 export default MyCart
+ 

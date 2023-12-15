@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import { InstagramIcon } from './Icon'
+import { useAuth0 } from '@auth0/auth0-react'
+import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
 const Footer = () => {
+  const { loginWithRedirect, logout, user } = useAuth0()
+
   return (
     <div className="footer-box">
       <hr></hr>
@@ -23,7 +27,16 @@ const Footer = () => {
         <div className="account">
           <p>My Account</p>
           <Link to="/my/cart">My Cart</Link>
-          <Link to="/">Sign Up</Link>
+          <IfAuthenticated>
+            <Link to="/" onClick={() => logout()}>
+              Logout
+            </Link>
+          </IfAuthenticated>
+          <IfNotAuthenticated>
+            <Link to="/" onClick={() => loginWithRedirect()}>
+              Login
+            </Link>
+          </IfNotAuthenticated>
         </div>
       </div>
       <div className="social">

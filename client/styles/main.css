@@ -794,3 +794,11 @@ label #cancel {
   font-size: 10px;
   margin-top: -10px;
 }
+
+#cart .login-mention {
+margin: 20px;
+font-size: 20px;
+color: #2b2b2b;
+
+
+}
