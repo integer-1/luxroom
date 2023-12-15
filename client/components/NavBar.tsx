@@ -3,8 +3,8 @@ const NavBar = () => {
     <nav>
       <input type="checkbox" id="check" />
       <label htmlFor="check">
-        <i className="fa-solid fa-bars" id="btn"></i>
-        <i className="fa-solid fa-xmark" id="cancel"></i>
+        <i className="fa-solid fa-bars" id="btn">.</i>
+        <i className="fa-solid fa-xmark" id="cancel">.</i>
       </label>
       <a href="/">
         <img id="home" src="../logo.jpg" alt="LUXLOOM" />

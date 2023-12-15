@@ -18,7 +18,7 @@ const Login = () => {
           overlay={<Tooltip id="tooltip-left">Logout</Tooltip>}
         >
           <button className="logout-button" onClick={() => logout()}>
-            <LogoutIcon />
+            <LogoutIcon />.
           </button>
         </OverlayTrigger>
         <OverlayTrigger
@@ -27,7 +27,7 @@ const Login = () => {
           overlay={<Tooltip id="tooltip-left">My Cart</Tooltip>}
         >
           <Link className="cart-button" to="/my/cart">
-            <LogonCartIcon />
+            <LogonCartIcon />.
           </Link>
         </OverlayTrigger>
       </IfAuthenticated>
@@ -40,7 +40,7 @@ const Login = () => {
           overlay={<Tooltip id="tooltip-left">Login</Tooltip>}
         >
           <button className="login-button" onClick={() => loginWithRedirect()}>
-            <LoginIcon />
+            <LoginIcon />.
           </button>
         </OverlayTrigger>
       </IfNotAuthenticated>

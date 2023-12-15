@@ -41,7 +41,7 @@ const Footer = () => {
         <div className="social">
           <p>Social</p>
           <Link to="https://www.instagram.com/luxloom_project/">
-            <InstagramIcon />
+            <InstagramIcon />.
           </Link>
         </div>
       </div>

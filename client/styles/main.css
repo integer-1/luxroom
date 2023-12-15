@@ -26,6 +26,7 @@
   padding: 0;
   background: none;
   cursor: pointer;
+  color: white;
 }
 
 #login .cart-button {
@@ -693,6 +694,7 @@ label #cancel {
 
 .social a {
   display: 'block';
+  color: white;
 }
 
 .copyright {
