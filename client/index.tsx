@@ -12,7 +12,7 @@ const root = createRoot(document.getElementById('app') as HTMLElement)
 root.render(
   <Auth0Provider
     domain="luxloom.au.auth0.com"
-    clientId="tLQ4jzWrRDwbz1lfiYb4A5U1kER3J1R1"
+    clientId="jsFa0mAZUDTnnRPxZhxv0DBr0vm5nJBt"
     authorizationParams={{
       redirect_uri: window.location.origin,
       audience: 'https://luxloom/api',
