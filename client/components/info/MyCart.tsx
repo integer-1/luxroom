@@ -6,6 +6,9 @@ import { getCartByAuth0IdWithDetail } from '../../apis/cart'
 import LoadingPage from '../LoadingPage'
 import { useCart } from '../hooks/useCart'
 import { Spinner } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { BinIcon} from './../Icon'
+
 
 const MyCart = () => {
   const { user } = useAuth0()
@@ -82,6 +85,10 @@ const MyCart = () => {
     }
   }
 
+  const handleDelete = (id: number) => {
+    deleteCartMutation.mutate(id)
+  }
+
   return (
     <div id="cart">
       <h4>Shopping Cart</h4>
@@ -101,6 +108,7 @@ const MyCart = () => {
                 <button onClick={() => handleDecrease(item.id)}>-</button>
                 <p>{item.quantity}</p>
                 <button onClick={() => handleIncrease(item.id)}>+</button>
+                <button className="deleteButton" onClick={() => handleDelete(item.id)}><BinIcon/></button>
               </div>
             </div>
           ))}
@@ -115,8 +123,12 @@ const MyCart = () => {
       </IfAuthenticated>
       <IfNotAuthenticated>
         <p className="login-mention">
-        <Spinner animation="grow" size="sm" style={{margin: 0, marginRight: '20px' }}/>
-          Check it out! To view your shopping cart, please log in.  
+          <Spinner
+            animation="grow"
+            size="sm"
+            style={{ margin: 0, marginRight: '20px' }}
+          />
+          Check it out! To view your shopping cart, please log in.
         </p>
       </IfNotAuthenticated>
     </div>
@@ -124,4 +136,3 @@ const MyCart = () => {
 }
 
 export default MyCart
- 

@@ -6,7 +6,7 @@ import * as db from '../db/db.ts'
 vi.mock('../db/db')
 
 describe('GET /api/v1/chairs', () => {
-  it('responds with chairs array on getChairs success', () => {
+  it('Responds with chairs array on getChairs success', () => {
     vi.mocked(db.getChairs).mockImplementation(() =>
       Promise.resolve([
         {
@@ -29,7 +29,8 @@ describe('GET /api/v1/chairs', () => {
         expect(res.body[0].price).toBe(555)
       })
   })
-  it('responds with 500 and error on getChairs rejection', () => {
+
+  it('Responds with 500 and error on getChairs rejection', () => {
     vi.mocked(db.getChairs).mockImplementation(async () =>
       Promise.reject(new Error('Could not get chairs'))
     )
