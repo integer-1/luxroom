@@ -12,6 +12,7 @@ import Contact from './components/info/Contact.tsx'
 import Location from './components/info/Location.tsx'
 import MyCart from './components/info/MyCart.tsx'
 import QandA from './components/info/QandA.tsx'
+import Checkout from './components/info/Checkout.tsx'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
@@ -26,5 +27,7 @@ export const routes = createRoutesFromElements(
     <Route path="/luxloom/contact" element={<Contact />} />
     <Route path="/luxloom/location" element={<Location />} />
     <Route path="/my/cart" element={<MyCart />} />
+    <Route path="/my/cart/checkout" element={<Checkout />} />
+
   </Route>
 )

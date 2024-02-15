@@ -7,8 +7,7 @@ import LoadingPage from '../LoadingPage'
 import { useCart } from '../hooks/useCart'
 import { Spinner } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { BinIcon} from './../Icon'
-
+import { BinIcon } from './../Icon'
 
 const MyCart = () => {
   const { user } = useAuth0()
@@ -108,18 +107,29 @@ const MyCart = () => {
                 <button onClick={() => handleDecrease(item.id)}>-</button>
                 <p>{item.quantity}</p>
                 <button onClick={() => handleIncrease(item.id)}>+</button>
-                <button className="deleteButton" onClick={() => handleDelete(item.id)}><BinIcon/></button>
+                <button
+                  className="deleteButton"
+                  onClick={() => handleDelete(item.id)}
+                >
+                  <BinIcon />
+                </button>
               </div>
             </div>
           ))}
         </div>
         <hr />
         <p className="total-price">
-          TOTAL <span className="price"> {totalPrice.toLocaleString()}</span>{' '}
+          TOTAL
+          <span className="price"> {totalPrice.toLocaleString()}</span>
           NZD
         </p>
         <p className="gst">* INCLUDING GST</p>
         <hr />
+        <div>
+          <Link to="/my/cart/checkout" state={cart}>
+            CHECKOUT
+          </Link>
+        </div>
       </IfAuthenticated>
       <IfNotAuthenticated>
         <p className="login-mention">
