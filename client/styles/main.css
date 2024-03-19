@@ -804,21 +804,27 @@ label #cancel {
   border-color: white;
 }
 
-.total-price,
-.gst {
+.show-price {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-right: 2rem;
 }
 
-.total-price span {
-  margin: 0 5px 0 20px;
+.show-price .price-name {
+  font-size: 16px;
+}
+.show-price .price {
+  margin: 0 0 10px 100px;
+  font-size: 16px;
+}
+
+.show-price .currency {
+  font-size: 10px;
 }
 
 .gst {
   font-size: 10px;
-  margin-top: -10px;
 }
 
 #cart .login-mention {

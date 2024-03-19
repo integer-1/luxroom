@@ -16,6 +16,19 @@ const Checkout = () => {
     0
   )
 
+  const totalItemsQuantity = state.reduce(
+    (accumulator: number, item: CartWithDetail) => {
+      return accumulator + item.quantity
+    },
+    0
+  )
+
+  let itemLabel = 'Item'
+  if (totalItemsQuantity > 1) itemLabel = 'Items'
+
+  let shippingCost = 0
+  if (totalPrice < 115 && totalPrice > 0) shippingCost = 20
+
   console.log(totalPrice)
 
   return (
@@ -32,10 +45,28 @@ const Checkout = () => {
           )
         })}
         <hr></hr>
-        <p>
-          Subtotal
-          <span>{totalPrice}</span>
-        </p>
+        <div className="show-price">
+          <span className="price-name">
+            {totalItemsQuantity} {itemLabel}
+          </span>
+          <span className="price"> {totalPrice.toLocaleString()}</span>
+          <span className="currency"> NZD</span>
+        </div>
+        <div className="show-price">
+          <span className="price-name">Shipping Cost</span>
+          <span className="price"> {shippingCost}</span>
+          <span className="currency"> NZD</span>
+        </div>
+        <div className="show-price">
+          <span className="price-name">Total</span>
+          <span className="price"> {totalPrice + shippingCost}</span>
+          <span className="currency"> NZD</span>
+        </div>
+        <div className="gst">
+          * INCLUDING GST of
+          {(((totalPrice + shippingCost) / 1.15) * 0.15).toFixed(2)}
+          <span className="currency"> NZD</span>
+        </div>
         <p>Standard delivery to</p>
       </div>
     </div>

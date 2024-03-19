@@ -34,6 +34,18 @@ const MyCart = () => {
     },
     0
   )
+  const totalItemsQuantity = cart.reduce(
+    (accumulator: number, item: CartWithDetail) => {
+      return accumulator + item.quantity
+    },
+    0
+  )
+
+  let itemLabel = 'Item'
+  if (totalItemsQuantity > 1) itemLabel = 'Items'
+
+  let shippingCost = 0
+  if (totalPrice < 115 && totalPrice > 0) shippingCost = 20
 
   const handleDecrease = (id: number) => {
     try {
@@ -118,16 +130,32 @@ const MyCart = () => {
           ))}
         </div>
         <hr />
-        <p className="total-price">
-          TOTAL
+        <div className="show-price">
+          <span className = "">
+            {totalItemsQuantity} {itemLabel}
+          </span>
           <span className="price"> {totalPrice.toLocaleString()}</span>
-          NZD
-        </p>
-        <p className="gst">* INCLUDING GST</p>
+          <span className="currency"> NZD</span>
+        </div>
+        <div className="show-price">
+          <span>Shipping Cost</span>
+          <span className="price"> {shippingCost}</span>
+          <span className="currency"> NZD</span>
+        </div>
+        <div className="show-price">
+          <span>Total</span>
+          <span className="price"> {totalPrice + shippingCost}</span>
+          <span className="currency"> NZD</span>
+        </div>
+        <div className="gst">
+          * INCLUDING GST of
+          {(((totalPrice + shippingCost) / 1.15) * 0.15).toFixed(2)}
+          <span className="currency"> NZD</span>
+        </div>
         <hr />
         <div>
           <Link to="/my/cart/checkout" state={cart}>
-            CHECKOUT
+            GO TO CHECKOUT
           </Link>
         </div>
       </IfAuthenticated>
